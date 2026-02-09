@@ -127,18 +127,16 @@ ul ul, ol ol, ul ol, ol ul {
     margin-left: 0 !important;
 }
 
-/* Content Area Alignment - SYMMETRIC LEFT AND RIGHT PADDING */
+/* Content Area Alignment - CLEAN AND BALANCED */
 .info-block-w-icon {
     margin-bottom: 2em;
-    padding-left: 2em !important;
-    padding-right: 2em !important;
+    padding: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
 
 .info-list-w-icon {
-    padding-left: 2em !important;
-    padding-right: 2em !important;
+    padding: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
@@ -146,8 +144,7 @@ ul ul, ol ol, ul ol, ol ul {
 .ci-text {
     text-align: justify;
     max-width: 100%;
-    padding-left: 2em !important;
-    padding-right: 2em !important;
+    padding: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
@@ -167,41 +164,6 @@ ul ul, ol ol, ul ol, ol ul {
     margin-left: 0 !important;
 }
 
-/* Better spacing for content boxes - SYMMETRIC ON ALL DEVICES */
-@media only screen and (min-width: 768px) {
-    .info-block-w-icon {
-        padding-left: 3em !important;
-        padding-right: 3em !important;
-    }
-    
-    .info-list-w-icon {
-        padding-left: 3em !important;
-        padding-right: 3em !important;
-    }
-    
-    .ci-text {
-        padding-left: 3em !important;
-        padding-right: 3em !important;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    .info-block-w-icon {
-        padding-left: 4em !important;
-        padding-right: 4em !important;
-    }
-    
-    .info-list-w-icon {
-        padding-left: 4em !important;
-        padding-right: 4em !important;
-    }
-    
-    .ci-text {
-        padding-left: 4em !important;
-        padding-right: 4em !important;
-    }
-}
-
 /* Home Section Improvements */
 .home-content {
     padding: 2em 0;
@@ -216,7 +178,7 @@ ul ul, ol ol, ul ol, ol ul {
     line-height: 1.2 !important;
     margin-bottom: 0.5em;
     font-weight: 700;
-    letter-spacing: -0.01em;
+    letter-spacing: 0em;
 }
 
 .home-text h4 {
