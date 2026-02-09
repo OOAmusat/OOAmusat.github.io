@@ -1,0 +1,615 @@
+/* ============================================
+   RESPONSIVE ENHANCEMENTS - 2026
+   Mobile-First Responsive Design
+   ============================================ */
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+/* 
+  xs: 0-575px (Mobile phones)
+  sm: 576-767px (Large phones)
+  md: 768-991px (Tablets)
+  lg: 992-1199px (Small desktops)
+  xl: 1200px+ (Large desktops)
+*/
+
+/* ============================================
+   BASE RESPONSIVE IMPROVEMENTS
+   ============================================ */
+
+/* Ensure all images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive containers */
+.container,
+.page-container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Prevent horizontal overflow */
+body,
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ============================================
+   FLEXIBLE GRID SYSTEM
+   ============================================ */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.row > [class*="col-"] {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY
+   ============================================ */
+
+/* Fluid typography using clamp */
+h1 {
+  font-size: clamp(1.75rem, 4vw + 1rem, 3.25rem);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw + 0.5rem, 2.25rem);
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw + 0.5rem, 1.75rem);
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: clamp(1.125rem, 1.5vw + 0.5rem, 1.375rem);
+  line-height: 1.5;
+}
+
+p {
+  font-size: clamp(0.9375rem, 1vw + 0.25rem, 1.0625rem);
+  line-height: 1.7;
+}
+
+/* ============================================
+   MOBILE NAVIGATION IMPROVEMENTS
+   ============================================ */
+
+/* Mobile menu overlay */
+@media (max-width: 991px) {
+  .site-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    padding: 80px 30px 30px;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    overflow-y: auto;
+  }
+  
+  .site-nav.active {
+    right: 0;
+  }
+  
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .site-nav .menu-item {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
+  }
+  
+  .site-nav .menu-item a {
+    display: block;
+    padding: 16px 0;
+    font-size: 16px;
+    border-radius: 0;
+  }
+  
+  .site-nav .menu-item a::after {
+    display: none;
+  }
+  
+  /* Mobile menu backdrop */
+  .mobile-menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+  
+  .mobile-menu-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Hamburger menu animation */
+  .menu-toggle {
+    position: relative;
+    z-index: 1001;
+  }
+  
+  .menu-toggle i {
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-toggle.active i::before {
+    content: "\f00d"; /* Font Awesome close icon */
+  }
+}
+
+/* ============================================
+   HEADER RESPONSIVE IMPROVEMENTS
+   ============================================ */
+
+/* Sticky header on scroll */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   CONTENT LAYOUT IMPROVEMENTS
+   ============================================ */
+
+/* Flexible home content layout */
+.flex-v-align {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (max-width: 991px) {
+  .flex-v-align {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ============================================
+   RESPONSIVE SPACING UTILITIES
+   ============================================ */
+
+/* Mobile spacing adjustments */
+@media (max-width: 767px) {
+  .p-10,
+  .p-20,
+  .p-30,
+  .p-40,
+  .p-50 {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+  
+  .home-content {
+    padding: 2rem 0 !important;
+  }
+  
+  .page-content {
+    padding: 1.5rem !important;
+    margin: 0.75rem !important;
+  }
+  
+  .info-block-w-icon {
+    padding: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .block-title {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* ============================================
+   RESPONSIVE IMAGES & MEDIA
+   ============================================ */
+
+/* Profile photo responsive */
+.home-photo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.hp-inner {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 575px) {
+  .hp-inner {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .hp-inner {
+    width: 220px !important;
+    height: 220px !important;
+  }
+}
+
+/* ============================================
+   BUTTON RESPONSIVENESS
+   ============================================ */
+
+.home-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 575px) {
+  .home-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .home-buttons .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ============================================
+   TABLE RESPONSIVENESS
+   ============================================ */
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  table {
+    font-size: 14px;
+  }
+  
+  table thead {
+    display: none;
+  }
+  
+  table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  
+  table td {
+    display: block;
+    text-align: right;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
+  }
+  
+  table td:last-child {
+    border-bottom: none;
+  }
+  
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    color: var(--text-primary, #1e293b);
+  }
+}
+
+/* ============================================
+   TEXT ROTATION CAROUSEL
+   ============================================ */
+
+.text-rotation {
+  min-height: auto;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .text-rotation {
+    min-height: 60px;
+  }
+  
+  .text-rotation .item h4 {
+    font-size: 16px !important;
+    line-height: 1.5;
+  }
+}
+
+/* ============================================
+   LINKS & INTERACTIVE ELEMENTS
+   ============================================ */
+
+/* Ensure touch targets are large enough (min 44x44px) */
+a,
+button,
+.btn,
+.menu-toggle {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Better link spacing on mobile */
+@media (max-width: 767px) {
+  .home-text a {
+    display: inline-block;
+    margin: 0.25rem 0;
+  }
+  
+  .home-text p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* ============================================
+   SCROLL TO TOP BUTTON
+   ============================================ */
+
+.lmpixels-scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+}
+
+@media (max-width: 767px) {
+  .lmpixels-scroll-to-top {
+    width: 44px;
+    height: 44px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* ============================================
+   LANDSCAPE MOBILE OPTIMIZATION
+   ============================================ */
+
+@media (max-width: 991px) and (orientation: landscape) {
+  .home-content {
+    padding: 1.5rem 0;
+  }
+  
+  .hp-inner {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  
+  .text-rotation {
+    min-height: 50px;
+  }
+}
+
+/* ============================================
+   TABLET SPECIFIC (768px - 991px)
+   ============================================ */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .page-content {
+    padding: 2rem;
+    margin: 1.5rem;
+  }
+  
+  .header-content {
+    padding: 1rem 1.5rem;
+  }
+  
+  .home-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .info-block-w-icon {
+    padding: 2rem;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE (320px - 575px)
+   ============================================ */
+
+@media (max-width: 575px) {
+  .header-content {
+    padding: 0.75rem 1rem;
+  }
+  
+  .logo-text {
+    font-size: 16px !important;
+  }
+  
+  .logo-symbol {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 14px !important;
+  }
+  
+  .home-text h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .home-text h4 {
+    font-size: 15px !important;
+  }
+  
+  .home-text p {
+    font-size: 14px !important;
+  }
+  
+  .ci-text h3 {
+    font-size: 18px !important;
+  }
+  
+  .block-title h2 {
+    font-size: 22px !important;
+  }
+  
+  .btn {
+    padding: 10px 18px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .header,
+  .menu-toggle,
+  .lmpixels-scroll-to-top,
+  .preloader,
+  .mobile-menu-backdrop {
+    display: none !important;
+  }
+  
+  .page-content {
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY - FOCUS STATES
+   ============================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn,
+  .menu-item a,
+  .logo-symbol {
+    border: 2px solid currentColor;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Hide on mobile */
+.hide-mobile {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+/* Show only on mobile */
+.show-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .show-mobile {
+    display: block !important;
+  }
+}
+
+/* Text alignment utilities */
+@media (max-width: 767px) {
+  .text-center-mobile {
+    text-align: center !important;
+  }
+  
+  .text-left-mobile {
+    text-align: left !important;
+  }
+}
+
+/* Responsive margin/padding utilities */
+@media (max-width: 767px) {
+  .mt-mobile-0 { margin-top: 0 !important; }
+  .mt-mobile-1 { margin-top: 0.5rem !important; }
+  .mt-mobile-2 { margin-top: 1rem !important; }
+  .mt-mobile-3 { margin-top: 1.5rem !important; }
+  
+  .mb-mobile-0 { margin-bottom: 0 !important; }
+  .mb-mobile-1 { margin-bottom: 0.5rem !important; }
+  .mb-mobile-2 { margin-bottom: 1rem !important; }
+  .mb-mobile-3 { margin-bottom: 1.5rem !important; }
+  
+  .p-mobile-0 { padding: 0 !important; }
+  .p-mobile-1 { padding: 0.5rem !important; }
+  .p-mobile-2 { padding: 1rem !important; }
+  .p-mobile-3 { padding: 1.5rem !important; }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* GPU acceleration for smooth animations */
+.header,
+.site-nav,
+.menu-toggle,
+.btn,
+.lmpixels-scroll-to-top {
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Optimize font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
