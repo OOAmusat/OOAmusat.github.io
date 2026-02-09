@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography Test</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modern-theme.css">
+    <link rel="stylesheet" href="css/responsive-enhancements.css">
+    <link rel="stylesheet" href="css/typography-improvements.css">
+    <style>
+        body { padding: 20px; background: white; }
+        .test-section { margin: 30px 0; padding: 20px; border: 1px solid #ddd; }
+        .test-label { font-weight: bold; color: red; font-family: Arial; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h1>Typography Uniformity Test</h1>
+    
+    <div class="test-section">
+        <div class="test-label">H1 Test</div>
+        <h1>This is an H1 heading</h1>
+        <div class="test-label">Expected: EB Garamond, #2c3e50</div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-label">H2 Test (block-title)</div>
+        <div class="block-title">
+            <h2>This is an H2 in block-title</h2>
+        </div>
+        <div class="test-label">Expected: EB Garamond, #2c3e50</div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-label">H3 Test</div>
+        <h3>This is an H3 heading</h3>
+        <div class="test-label">Expected: EB Garamond, #2c3e50</div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-label">Paragraph Test</div>
+        <p>This is a paragraph with some text. It should be in EB Garamond font with color #2c3e50.</p>
+        <div class="test-label">Expected: EB Garamond, #2c3e50</div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-label">Link Test</div>
+        <p>This is a <a href="#">test link</a> in a paragraph.</p>
+        <div class="test-label">Expected: Link color #2c5aa0</div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-label">List Test</div>
+        <ul>
+            <li>List item one</li>
+            <li>List item two</li>
+            <li>List item three</li>
+        </ul>
+        <div class="test-label">Expected: EB Garamond, #2c3e50</div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-label">Content Text (.ci-text) Test</div>
+        <div class="ci-text">
+            <p>This is content in ci-text class. Should be EB Garamond, #2c3e50.</p>
+            <p>With <a href="#">a link</a> that should be #2c5aa0.</p>
+        </div>
+        <div class="test-label">Expected: EB Garamond, #2c3e50, links #2c5aa0</div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-label">Spacing Test</div>
+        <div class="block-title">
+            <h2>Section Header</h2>
+        </div>
+        <p>This paragraph should be close to the header above (0.75em + 0.5em spacing).</p>
+        <div class="test-label">Expected: Reduced spacing between header and text</div>
+    </div>
+</body>
+</html>
