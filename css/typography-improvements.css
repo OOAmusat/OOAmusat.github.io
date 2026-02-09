@@ -9,6 +9,16 @@
 /* For monospace code blocks - Latin Modern Mono alternative */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700&display=swap');
 
+/* Page Title Padding Override - Consistent across all pages */
+.page-title {
+    padding: 40px 0 !important;
+    text-align: center !important;
+}
+
+.page-title h1 {
+    font-family: 'EB Garamond', 'Crimson Pro', 'Georgia', serif !important;
+}
+
 /* Base Typography - LaTeX Style - OPTIMIZED SIZES */
 body {
     font-family: 'EB Garamond', 'Crimson Pro', 'Georgia', serif !important;
