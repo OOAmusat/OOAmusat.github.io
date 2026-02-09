@@ -127,26 +127,10 @@ ul ul, ol ol, ul ol, ol ul {
     margin-left: 0 !important;
 }
 
-/* Content Area Alignment - CLEAN AND BALANCED */
-.info-block-w-icon {
-    margin-bottom: 2em;
-    padding: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-.info-list-w-icon {
-    padding: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
+/* Content Area Alignment - PRESERVE ORIGINAL PADDING */
 .ci-text {
     text-align: justify;
     max-width: 100%;
-    padding: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
 }
 
 .ci-text p {
